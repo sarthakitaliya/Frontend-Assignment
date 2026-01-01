@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import messageBadge from "../../assets/icons/message-badge.svg";
 import appleLogo from "../../assets/icons/apple-logo.svg";
+import scrollIndicator from "../../assets/icons/scroll-indicator.svg";
 
 interface HeroProps {
     className?: string;
@@ -69,27 +70,14 @@ export default function Hero({ className = '' }: HeroProps) {
                 </a>
             </motion.div>
 
-            <motion.div
-                className="hidden sm:flex mt-12 sm:mt-16 flex-col items-center animate-bounce"
+            <motion.img
+                src={scrollIndicator}
+                alt="Scroll to learn more"
+                className="hidden sm:block mt-36 sm:mt-44 w-auto h-12 sm:h-14 animate-bounce"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }}
-            >
-                <span className="text-xs sm:text-sm text-[#9CA3AF] mb-2">Scroll to learn more</span>
-                <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    className="w-4 h-4 sm:w-5 sm:h-5 text-[#9CA3AF]"
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                    />
-                </svg>
-            </motion.div>
+            />
         </section>
     );
 }
